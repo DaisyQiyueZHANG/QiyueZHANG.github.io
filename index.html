@@ -21,8 +21,10 @@
 		<link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/typography.css">
     <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 		<script defer src="./js/script.js"></script>
+
 	</head>
 	<body>
     <!-- NAVBAR -->
@@ -38,7 +40,7 @@
     </div>
 
     <!-- MAIN PAGE CONTENT -->
-    <div id="main-content">
+    <div id="main-content" class="justified-text">
 
       <!-- PORTFOLIO HEADER -->
       <div id="portfolio-header">
@@ -67,6 +69,17 @@
             <div class="header-text">
               <span class="main-title">Qiyue ZHANG</span>
               <div class="body-text">	
+                <div class="author__content">
+
+                  <p class="author__bio">Master student, School of Computer,  University of Macau</p>
+                </div>
+                <div class="author__urls-wrapper"> 
+                  <ul class="author__urls social-icons" style="list-style-type: none;">
+                    <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Macau</li>
+                    <li><a href="mailto:zqy20000530@gmail.com"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+                    <li><a href="https://github.com/DaisyQiyueZHANG"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+                </ul>
+                </div>
 I am a second-year graduate student in Msc Fin-tech of University of Macau and serve as a member of System Design and Development Group</div>
             </div>
             <a class="button" id="my-work-link">
@@ -171,17 +184,81 @@ I am a second-year graduate student in Msc Fin-tech of University of Macau and s
         <span class="subheader-text">My Research</span>
 
         <div class="projects-container">
-<h4>Application of financial text analysis in financial reports</h4>
+          <h4>Application of financial text analysis in financial reports</h4>
+          <p>
+            <b>Task</b>: To analyze corporate culture as reflected in the financial reports of Chinese state-owned enterprises (SOEs) using advanced text analysis techniques.<br>
+            <b>Objective</b>: Investigate the use of individualistic and collectivistic terms within the financial reporting field to gain insight into the underlying corporate culture.<br>
+            <b>Research Design</b>:
+            <ol>
+              <li><b>Material Collection:</b> Gathering financial reports in PDF format. Using Python libraries such as PyPDF2 or pdfminer.six to extract raw text from these documents.</li>
+              <li><b>Text Preprocessing:</b> Employing natural language processing to clean and segment the text into analyzable units. For instance:
+                <pre><code>
+                # Example Python code snippet for text preprocessing
+                import jieba
+                sentences = ["这是来自财报的示例句子。", "分析将揭露文化趋势。"]
+                tokenized_sentences = [" ".join(jieba.cut(sent)) for sent in sentences]
+                </code></pre>
+              </li>
+              <li><b>Data Transformation:</b> Converting the processed text data into a format suitable for machine learning models, such as NumPy arrays (.npy files).
+                <pre><code>
+                # Example Python code snippet for data transformation
+                import numpy as np
+                np.save('tokenized_sentences.npy', np.array(tokenized_sentences))
+                </code></pre>
+              </li>
+              <li><b>Morphological Analysis:</b> Analyzing word roots and affixes to understand the structure of the Chinese language used in financial narratives.</li>
+              <li><b>Model Training:</b> Training Word2Vec models with Gensim to generate word embeddings that capture semantic relations between words within the financial context.</li>
+            </ol>
+            <b>Challenges</b>: One of the primary challenges is handling the complex nature of the Chinese language, including its characters, word segmentation, and idiomatic expressions, which are crucial for accurate sentiment and semantic analysis.<br>
+            <b>Current Status</b>: We are currently in the text preprocessing stage, perfecting the tokenization process to ensure high fidelity in the data used for model training.<br>
+        </div>
+    <!-- Project container -->
+    <div class="projects-container">
+      <h4>Application of financial text analysis in financial reports</h4>
+      <p>
+        <b>Task</b>: Analyze the corporate culture of Chinese state-owned enterprise financial reports.<br>
+        <b>What</b>: Study the application of individualism and collectivism in the financial field, focusing on how these cultural dimensions are reflected in the language and reporting style of financial documents.
+      </p>
+      <p>
+        <!-- 插入代码样本 -->
+        Example of text analysis code snippet in Python:
+        <div class="code-sample">
+          <code>
+            
+            
+            passage_embedding = model.encode(passage)
+            words_embeddings = model.encode(words)
+            
+            
+            similarities = torch.cosine_similarity(
+                torch.tensor(passage_embedding).unsqueeze(0),
+                torch.tensor(words_embeddings),
+                dim=1
+            )
+            
+            
+            top_indices = torch.topk(similarities, k=5).indices
+            top_words = [words[i] for i in top_indices]
+            
+            print("Key words:")
+            for word in top_words:
+                print(word)
+    print(sentiment)
+          </code>
+        </div>
+      </p>
+      <p>
+        <!-- 插入图表或图像 
+        Corporate culture influence on financial reporting:
+        <img src="path_to_image.jpg" alt="Cultural Influence Graph" style="width:100%;max-width:600px;">-->
+      </p>
+      <p>
+        <!-- 剩余的段落 -->
+      </p>
+    </div>
+    
 
-                          <p>
-                            <b>Task</b>: Corporate culture of Chinese state-owned enterprise financial reports<br>
-                            <b>What</b>: Study the application of individualism and collectivism in the financial field<br>
-
-
-
-
-
-          </div>
+  <!-- Continue with existing content -->
         </div>
       </div>
     </div>
